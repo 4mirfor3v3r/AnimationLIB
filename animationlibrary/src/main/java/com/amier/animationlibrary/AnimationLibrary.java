@@ -4,6 +4,11 @@ import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Color;
+import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.util.Pair;
 import android.view.View;
@@ -98,5 +103,27 @@ public class AnimationLibrary {
         animate.setInterpolator(interpolator);
 
         targetView.startAnimation(animate);
+    }
+
+    public void AnimatedColorBG(View targetView, Color BL, Color TR, Color BR, Color TL){
+
+        GradientDrawable gd1 = new GradientDrawable(
+                GradientDrawable.Orientation.BL_TR,
+                new int[] {Color.parseColor(BL.toString()),Color.parseColor(TR.toString())});
+        GradientDrawable gd2 = new GradientDrawable(
+                GradientDrawable.Orientation.BR_TL,
+                new int[] {Color.parseColor(BR.toString()),Color.parseColor(TL.toString())});
+
+        AnimationDrawable ad = new AnimationDrawable();
+        ad.addFrame(gd1,2000);
+        ad.addFrame(gd2,2000);
+        ad.setOneShot(false);
+        targetView.setBackground(ad);
+
+        AnimationDrawable animationDrawable = (AnimationDrawable) targetView.getBackground();
+
+        animationDrawable.setEnterFadeDuration(1000);
+        animationDrawable.setExitFadeDuration(2000);
+        animationDrawable.start();
     }
 }
