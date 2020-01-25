@@ -3,11 +3,8 @@ package com.amier.animationlibrary;
 import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Context;
-import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
-import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.util.Pair;
@@ -19,7 +16,6 @@ import android.view.animation.LayoutAnimationController;
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 public class AnimationLibrary {
     private Context mCtx;
