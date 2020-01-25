@@ -101,14 +101,14 @@ public class AnimationLibrary {
         targetView.startAnimation(animate);
     }
 
-    public void AnimatedColorBG(View targetView, Color BL, Color TR, Color BR, Color TL){
+    public void AnimatedColorGradient(View targetView, Color BottomLeft, Color BottomRight, Color TopLeft, Color TopRight){
 
         GradientDrawable gd1 = new GradientDrawable(
                 GradientDrawable.Orientation.BL_TR,
-                new int[] {Color.parseColor(BL.toString()),Color.parseColor(TR.toString())});
+                new int[] {Color.parseColor(BottomLeft.toString()),Color.parseColor(TopRight.toString())});
         GradientDrawable gd2 = new GradientDrawable(
                 GradientDrawable.Orientation.BR_TL,
-                new int[] {Color.parseColor(BR.toString()),Color.parseColor(TL.toString())});
+                new int[] {Color.parseColor(BottomRight.toString()),Color.parseColor(TopLeft.toString())});
 
         AnimationDrawable ad = new AnimationDrawable();
         ad.addFrame(gd1,2000);
